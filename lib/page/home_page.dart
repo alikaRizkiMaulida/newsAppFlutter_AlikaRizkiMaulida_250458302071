@@ -169,12 +169,20 @@ class _HomePageScreenState extends State<HomePageScreen> {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute<void>(
-                      builder: (context) =>
+                      builder: (context) => Scaffold(
+                        appBar: AppBar(
+                          title: Text(article.title),
+                        ),
+                        body: Center(
+                          child: Text('Detail halaman untuk ${article.title}'),
+                        ),
+                      ),
                     ),
                   );
                 },
               );
             },
+            itemCount: dummyArticle.length,
           ),
         ],
       ),
